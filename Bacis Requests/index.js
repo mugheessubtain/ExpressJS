@@ -1,6 +1,6 @@
 import express from "express";
 import userRoutes from './routes/user.js'
-import mongoose from "mongoose";
+
 const app = express();
 const PORT = 4000;
 app.use(express.json()); //poori app pe laga he
@@ -10,8 +10,7 @@ const users = [
   { id: 1, name: "John Doe" },
   { id: 2, name: "Jane Doe" }
 ];
-mongoose.connect('mongodb+srv://mugheessubtain:n2dnWfoi5uPz5dPl@cluster0.2r2rb.mongodb.net/').then(() => console.log("DB connected"))
-  .catch((err) => console.log(err))
+
 
 app.get("/", (req, res) => {
   res.send("hello world");
